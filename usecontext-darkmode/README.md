@@ -13,6 +13,7 @@ useContext hooks 사용 방법
 
 3. App.js 최상위 파일에 다음과 같이 import 그리고
    아래와 같이 중첩, props로 전달
+   
    import { ThemeContext } from './context/ThemeContext';
    import { UserContext } from './context/UserContext';
 
@@ -26,11 +27,11 @@ useContext hooks 사용 방법
    </UserContext.Provider>
    )
 
-4. 필요로 하는 각 컴포넌트에 import 및 변수에 할당
+ 4. 필요로 하는 각 컴포넌트에 import 및 변수에 할당
 
-import React, { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
-import { UserContext } from '../context/UserContext';
+   import React, { useContext } from 'react';
+   import { ThemeContext } from '../context/ThemeContext';
+   import { UserContext } from '../context/UserContext';
 
 const { isDark } = useContext(ThemeContext);
 const name = useContext(UserContext);
