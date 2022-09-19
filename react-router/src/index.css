@@ -279,7 +279,7 @@ ul {
 }
 
 .active {
-  color: var(--primary-700);
+  color: var(--primary-500);
 }
 .products article {
   margin-bottom: 1rem;
