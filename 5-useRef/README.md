@@ -53,7 +53,7 @@ function App() {
 export default App;
 ```
 
-![useRef-1]('./basic/public/useref-1.png')
+![useRef-1](./basic/public/useref-1.png)
 
 Ref의 값은 3으로 변경된 반면에 var 값은 0이다.
 
