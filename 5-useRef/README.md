@@ -62,3 +62,53 @@ Ref의 값은 3으로 변경된 반면에 var 값은 0이다.
 반면에 Ref값은 렌더링(초기화)이 되어도 변수들의 값이 유지된다.
 
 ### 결론: useRef는 변화는 감지해야 하지만 그 변화가 렌더링을 발생시키면 안되는 값을 다룰 때 사용
+
+## useRef #2
+
+```tsx
+import React, { useEffect, useRef } from 'react';
+
+function App() {
+  const inputRef = useRef('hi');
+
+  useEffect(() => {
+    console.log('inputRef', inputRef);
+    inputRef.current.focus();
+  }, []);
+
+  const showAlert = (message) => {
+    alert(`환영합니다 ${message}`);
+  };
+
+  const clearAndFocusInput = () => {
+    inputRef.current.value = '';
+    inputRef.current.focus();
+  };
+
+  const login = () => {
+    showAlert(inputRef.current.value);
+    clearAndFocusInput();
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      showAlert(inputRef.current.value);
+      clearAndFocusInput();
+    }
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} onKeyDown={handleKeyDown} placeholder="username" />
+      <button onClick={login}>로그인</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+로그인 화면이 렌더링 되면 focus, 빈 값 등을 활용해 DOM요소에 접근할 수 있다.
+
+`inputRef.current.value = '';`
+`inputRef.current.focus();`
