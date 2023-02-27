@@ -22,3 +22,5 @@ JS의 DOM
       - Batch 10번 재 렌더링 되는게 아니라 바뀐 부분이 10개라면 10개가 한번에 업데이트됨
 
 ![virtualDOM-2](./public/virtualDOM-2.png)
+![virtualDOM-3](./public/virtualDOM-3.png)
+![virtualDOM-4](./public/virtualDOM-4.png)
