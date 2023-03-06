@@ -13,7 +13,9 @@ function Content() {
         color: isDark ? 'white' : 'black',
       }}
     >
-      <p>{user}님, 좋은 하루 되세요</p>
+      <p>
+        {user.name}님{user.age}, 좋은 하루 되세요
+      </p>
     </div>
   );
 }

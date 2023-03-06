@@ -48,7 +48,7 @@ const initialState = {
 };
 
 function App() {
-  const inputRef = useRef('asd');
+  const inputRef = useRef(null);
   const [name, setName] = useState('');
   const [studentsInfo, dispatch] = useReducer(reducer, initialState);
   console.log(studentsInfo);
@@ -81,17 +81,18 @@ function App() {
         onChange={(e) => setName(e.target.value)}
       />
       <button onClick={nameDispatch}>추가</button>
-      {studentsInfo.students.map((student) => {
-        return (
-          <Student
-            key={student.id}
-            name={student.name}
-            dispatch={dispatch}
-            id={student.id}
-            isHere={student.isHere}
-          />
-        );
-      })}
+      {studentsInfo &&
+        studentsInfo.students.map((student) => {
+          return (
+            <Student
+              key={student.id}
+              name={student.name}
+              dispatch={dispatch}
+              id={student.id}
+              isHere={student.isHere}
+            />
+          );
+        })}
     </div>
   );
 }

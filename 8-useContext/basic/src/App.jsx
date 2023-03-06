@@ -7,9 +7,10 @@ import { UserContext } from './context/UserContext';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const user = { name: '시용자', age: 30 };
 
   return (
-    <UserContext.Provider value={'사용자'}>
+    <UserContext.Provider value={user}>
       <ThemeContext.Provider value={{ isDark, setIsDark }}>
         <Page />
       </ThemeContext.Provider>

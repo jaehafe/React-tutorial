@@ -16,7 +16,7 @@ function Header() {
         color: isDark ? 'white' : 'black',
       }}
     >
-      <h1>welcome {user}!</h1>
+      <h1>welcome {user.name}!</h1>
     </header>
   );
 }
